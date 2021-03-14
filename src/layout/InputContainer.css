@@ -1,0 +1,28 @@
+#InputContainer{
+
+    grid-area: InputContainer;
+    background-color: #2796B9;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+
+}
+
+#InputContainer > input{
+
+    box-sizing: content-box;
+    width: 94%;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    margin-right: 10px;
+    font-family: inherit;
+
+}
+
+#InputContainer > input:focus{
+
+    outline: none;
+
+}
+

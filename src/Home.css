@@ -1,0 +1,29 @@
+#Home{
+
+    background:#46B4D7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#Home > #content{
+
+    width: 800px;
+    height: max-content;
+    text-align: center;
+    color: white;
+
+}
+
+#Home > #content > h1,h2,h3,h4,p{
+
+    margin: 5px 0 0 0;
+    font-weight: 300;
+
+}
+
+#Home > #content > h3{
+
+    font-size: 1.3rem;
+
+}

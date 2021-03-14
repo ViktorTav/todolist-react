@@ -1,0 +1,39 @@
+@keyframes fade-in{
+
+    from{
+
+        left: 30%;
+        opacity: 0;
+
+    }
+
+    to{
+
+        opacity: 1;
+        left: 50%;
+
+    }
+
+}
+
+.Form{
+
+    background:#46B4D7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.Form > form{
+
+    width: 600px;
+    height: max-content;
+    text-align: center;
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fade-in .7s ease-in;
+
+}

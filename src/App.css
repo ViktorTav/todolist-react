@@ -1,0 +1,37 @@
+#App{
+
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 90% 10%;
+    grid-template-areas: 
+    "Sidebar TodoContainer"
+    "Sidebar InputContainer" 
+    ;
+}
+
+button{
+
+    width: 35px; height: 35px;
+    border: none;
+    background-color: white;
+    
+}
+
+button.redondo{
+
+    border-radius: 20px;
+
+}
+
+button:hover{
+
+    background-color: rgb(230, 230, 230);
+
+}
+
+button:focus{
+
+    outline:none;
+    background-color: rgb(219, 219, 219);
+
+}

@@ -1,0 +1,14 @@
+#TodoContainer{
+
+    grid-area: TodoContainer;
+    background-color: #2796B9;
+    padding: 20px;
+
+}
+
+#TodoContainer > ul{
+
+    overflow-y: auto;
+    height: 100%;
+
+}

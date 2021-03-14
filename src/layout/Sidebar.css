@@ -1,0 +1,8 @@
+#Sidebar{
+
+    grid-area: Sidebar;
+    background-color: #187E9E;
+    display: grid;
+    grid-template-rows: 10% 75% 15%;
+
+}
