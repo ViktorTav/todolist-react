@@ -3,6 +3,35 @@
     grid-area: Sidebar;
     background-color: #187E9E;
     display: grid;
-    grid-template-rows: 10% 75% 15%;
+    grid-template-rows: 10% 70% 20%;
+    color: white;
+    padding: 10px;
+    position: relative;
+
+}
+
+span#nomeUsuario{
+
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+span#desconectarUsuario{
+
+    text-decoration: underline;
+
+}
+
+span#desconectarUsuario:hover{
+
+    cursor: pointer;
+
+}
+
+#Sidebar > #footer{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
 }

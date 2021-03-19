@@ -6,19 +6,14 @@ class Input extends React.Component{
 
     render(){
 
-        let compValidacao;
-
-        if (this.props.comValidacao){
-
-            compValidacao = <Validacao msgErro = {this.props.msgErro}></Validacao>
-
-        }
+        let comValidacao = this.props.comValidacao ? <Validacao msgErro = {this.props.msgErro}></Validacao> : ""
 
         return (
 
         <>
 
             <input 
+                required
                 onChange = {this.props.onChange}
                 className = "Input"
                 placeholder = {this.props.placeholder}
@@ -26,7 +21,7 @@ class Input extends React.Component{
                 type = {this.props.type}>
             </input>
 
-            {compValidacao}
+            {comValidacao}
 
         </>
 

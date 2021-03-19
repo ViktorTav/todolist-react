@@ -2,6 +2,7 @@ import React from "react";
 import Form from "../components/Form/Form";
 import Input from "../components/Form/Input";
 import axios from "axios";
+import configApp from "../configApp.json"
 import "./Cadastro.css"
 
 class Cadastro extends React.Component{
@@ -54,9 +55,7 @@ class Cadastro extends React.Component{
         const email = form[1].value;
         const senha = form[2].value;
 
-        const url = "http://localhost:4000/cadastro" //Criar um arquivo separado para configurações
-
-        axios(url, {data:{nome,email,senha}, method:"POST"})
+        axios.post(`${configApp.urlApi}/cadastro`, {nome,email,senha})
         .then(res => {
 
             console.log(res);
@@ -81,12 +80,12 @@ class Cadastro extends React.Component{
 
         return (
 
-            <Form onSubmit = {this.handleOnSubmit} textoBotao = "Login">
+            <Form onSubmit = {this.handleOnSubmit} textoBotao = "Cadastrar">
                 
-                <Input name = "nome" type = "text" placeholder = "Nome Completo:"/>
-                <Input comValidacao msgErro = {this.state.msgErroEmail} onChange = {this.limparMsgErro} name = "email" type = "text" placeholder = "E-mail:"/>
-                <Input name = "senha" type = "text" placeholder = "Senha:"/>
-                <Input comValidacao msgErro = {this.state.msgErroSenha} onChange = {this.limparMsgErro} type = "text" placeholder = "Confirmar Senha:"/>
+                <Input type = "text" placeholder = "Nome Completo:"/>
+                <Input type = "email" comValidacao msgErro = {this.state.msgErroEmail} onChange = {this.limparMsgErro} placeholder = "E-mail:"/>
+                <Input type = "password" placeholder = "Senha:"/>
+                <Input type = "password" comValidacao msgErro = {this.state.msgErroSenha} onChange = {this.limparMsgErro} placeholder = "Confirmar Senha:"/>
 
             </Form>
         

@@ -2,32 +2,45 @@ import React from "react";
 import TextHighlight from "../components/TextHighlight";
 import "./Sidebar.css";
 import getCookie from "../getCookie";
+import axios from "axios";
+import configApp from "../configApp.json";
 
-function Sidebar(props){
+class Sidebar extends React.Component{
 
-    const nome = getCookie("nome");
+    async desconectarUsuario(){
 
-    return (
+        await this.props.salvarTodos();
 
-        <div id = "Sidebar">
+        axios.post(`${configApp.urlApi}/logout`)
+        .then((res)=>this.props.history.push(res.data));
 
-            <div id = "header">
+    }
 
-                <h1>{nome}</h1>
+    render(){
 
+        const nome = getCookie("nome");
+
+        return (
+    
+            <div id = "Sidebar">
+    
+                <div id = "header">
+                    <span id = "nomeUsuario">{nome}</span><br/>
+                    <span onClick = {this.desconectarUsuario.bind(this)} id = "desconectarUsuario">Sair</span>
+                </div>
+                <div id = "content"></div>
+                <div id = "footer">
+    
+                    <TextHighlight comBadge badgeTexto = {this.props.pendentes}>Pendentes</TextHighlight>
+                    <TextHighlight comBadge badgeTexto =  {this.props.concluidos}>Concluídas</TextHighlight>
+    
+                </div>
+    
             </div>
-            <div id = "content"></div>
-            <div id = "footer">
+    
+        )
 
-                <TextHighlight comBadge badgeTexto = {props.pendentes}>Pendentes</TextHighlight>
-                <TextHighlight comBadge badgeTexto =  {props.concluidos}>Concluídas</TextHighlight>
-
-            </div>
-
-        </div>
-
-    )
-
+    }
 
 }
 

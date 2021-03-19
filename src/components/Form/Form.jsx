@@ -17,7 +17,7 @@ class Form extends React.Component{
 
         <div className = "Form">
 
-            <form onSubmit = {this.handleFormSubmit.bind(this)} method = "POST" action = {"http://" + this.props.action}>
+            <form onSubmit = {this.handleFormSubmit.bind(this)} method = "POST">
 
                 <Logo pequeno/>
                 {this.props.children}

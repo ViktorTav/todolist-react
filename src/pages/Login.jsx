@@ -2,6 +2,7 @@ import React from "react";
 import Form from "../components/Form/Form";
 import Input from "../components/Form/Input"
 import axios from "axios";
+import configApp from "../configApp.json"
 import "./Login.css"
 
 class Login extends React.Component{
@@ -28,17 +29,11 @@ class Login extends React.Component{
     }
 
     componentDidMount(){
-        
-        axios.defaults.withCredentials = true;
 
-        const url = "http://localhost:4000/autenticacao";
-
-        axios(url)
+        axios(`${configApp.urlApi}/autenticacao`)
         .then(res =>{
 
-            let pagina;
-
-            res.data.autenticado ? pagina = "/app" : pagina = "/login";
+            let pagina = res.data.autenticado ? "/app" : "/login";
 
             this.props.history.push(pagina);
 
@@ -51,11 +46,9 @@ class Login extends React.Component{
         const form = event.target;
 
         const email = form[0].value;
-        const senha = form[1].value;
+        const senha = form[1].value; 
 
-        const url = "http://localhost:4000/login" //Criar um arquivo separado para configurações
-
-        axios(url, {data:{email,senha}, method:"POST"})
+        axios(`${configApp.urlApi}/login`, {data:{email,senha}, method:"POST"})
         .then(res => {
 
             const data = res.data;
@@ -79,7 +72,7 @@ class Login extends React.Component{
 
         return (
 
-            <Form onSubmit = {this.handleOnSubmit} action = "localhost:4000/login" textoBotao = "Login">
+            <Form onSubmit = {this.handleOnSubmit} textoBotao = "Login">
                 
                 <Input onChange = {this.limparMsgErro} name = "email" type = "email" placeholder = "E-mail"></Input>
                 <Input comValidacao msgErro = {this.state.msgErro} onChange = {this.limparMsgErro} name = "senha" type = "password" placeholder = "Senha"></Input>

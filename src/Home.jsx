@@ -3,15 +3,14 @@ import Botao from "./components/Form/Botao";
 import { Link } from "react-router-dom";
 import Logo from "./components/Logo";
 import axios from "axios";
+import configApp from "./configApp.json"
 import "./Home.css";
 
 class Home extends React.Component{
 
     verificaAutenticacao(){
 
-        const url = "http://localhost:4000/autenticacao";
-
-        axios(url)
+        axios(`${configApp.urlApi}/autenticacao`)
         .then(res =>{
 
             let pagina;
@@ -25,8 +24,6 @@ class Home extends React.Component{
     }
 
     componentDidMount(){
-
-        axios.defaults.withCredentials = true;
 
     }
 

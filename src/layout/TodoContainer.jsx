@@ -18,7 +18,7 @@ class TodoContainer extends React.Component{
 
             const todos = this.props.todoList.map((todo,index)=>{
 
-                return <TodoItem atualizarContagem = {this.props.atualizarContagem} remove = {this.props.remove} key = {index} id = {index}>{todo.texto}</TodoItem>
+                return <TodoItem concluido = {todo.concluido} atualizarContagem = {this.props.atualizarContagem} remove = {this.props.remove} key = {index} id = {index}>{todo.texto}</TodoItem>
     
             })
     

@@ -1,5 +1,4 @@
-import {BrowserRouter as Router, Switch} from "react-router-dom";
-import Route from "./Route";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Login from "../pages/Login";
 import Cadastro from "../pages/Cadastro";
 import Home from "../Home";
@@ -16,7 +15,7 @@ const Routes = ()=>{
             <Route exact path = "/" component = {Home}/>
             <Route path = "/login" component = {Login}/>
             <Route path = "/cadastro" component = {Cadastro}/>
-            <Route path = "/app" ehPrivada redirecionarPara = "/login" component = {App}/>
+            <Route path = "/app" component = {App}/>
 
         </Switch>
 

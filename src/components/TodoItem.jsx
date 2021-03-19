@@ -29,9 +29,9 @@ class TodoItem extends React.Component{
 
         return (
 
-            <div data-concluido = {false} data-todoid = {this.props.id} className = "TodoItem">
+            <div data-concluido = {this.props.concluido} data-todoid = {this.props.id} className = "TodoItem">
 
-                <input onClick = {this.mudarEstadoConcluido} type = "checkbox"/>
+                <input checked = {Boolean(this.props.concluido)} onClick = {this.mudarEstadoConcluido} type = "checkbox"/>
                 <p>{this.props.children}</p>
                 <img onClick = {this.props.remove} alt = "" src = {closeIcon}></img>
 
